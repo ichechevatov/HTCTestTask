@@ -18,6 +18,7 @@
 		9184BC53255C8A5700FB9CB6 /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9184BC52255C8A5700FB9CB6 /* StudentTableViewCell.swift */; };
 		9184BC55255D052900FB9CB6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9184BC54255D052900FB9CB6 /* DetailViewController.swift */; };
 		9184BC57255D206800FB9CB6 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9184BC56255D206800FB9CB6 /* Validator.swift */; };
+		F2901F78265E433300BD3EC0 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2901F76265E433300BD3EC0 /* Detail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9184BC52255C8A5700FB9CB6 /* StudentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
 		9184BC54255D052900FB9CB6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9184BC56255D206800FB9CB6 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		F2901F77265E433300BD3EC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = HTCTestTask/Base.lproj/Detail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				9184BC3C255C7BAE00FB9CB6 /* SceneDelegate.swift */,
 				9184BC3E255C7BAE00FB9CB6 /* ViewController.swift */,
 				9184BC40255C7BAE00FB9CB6 /* Main.storyboard */,
+				F2901F76265E433300BD3EC0 /* Detail.storyboard */,
 				9184BC43255C7CB200FB9CB6 /* Assets.xcassets */,
 				9184BC45255C7CB200FB9CB6 /* LaunchScreen.storyboard */,
 				9184BC48255C7CB300FB9CB6 /* Info.plist */,
@@ -143,6 +146,7 @@
 				9184BC47255C7CB200FB9CB6 /* LaunchScreen.storyboard in Resources */,
 				9184BC44255C7CB200FB9CB6 /* Assets.xcassets in Resources */,
 				9184BC42255C7BAE00FB9CB6 /* Main.storyboard in Resources */,
+				F2901F78265E433300BD3EC0 /* Detail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +185,14 @@
 				9184BC46255C7CB200FB9CB6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F2901F76265E433300BD3EC0 /* Detail.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F2901F77265E433300BD3EC0 /* Base */,
+			);
+			name = Detail.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -306,6 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HTCTestTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +336,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = HTCTestTask/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

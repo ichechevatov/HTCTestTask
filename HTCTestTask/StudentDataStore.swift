@@ -2,47 +2,57 @@
 
 import Foundation
 
-class StudentDataStore{
-   private var arrayStudents : Array<StudenItem> = Array<StudenItem>()
+class StudentDataStore {
+    //MARK: - property
+    private var arrayStudents : Array<StudenItem> = Array<StudenItem>()
     private let dataBase = UserDefaults.standard
     static let shared = StudentDataStore()
     
-    var testArray = [1,2,3,4,5,6,7]
-    
-    private init(){
+    //MARK: - init
+    private init() {
         loadData()
     }
     
-    func getStudent(forIndex index: Int) -> StudenItem{
+    //MARK: - public method
+    func getStudent(forIndex index: Int) -> StudenItem {
         let student = arrayStudents[index]
         return student
     }
     
-    func getCountStudent() -> Int {
+    func getCountStudents() -> Int {
         return arrayStudents.count
     }
     
-    func addStudent(_ student: StudenItem){
+    func addStudent(_ student: StudenItem) {
         arrayStudents.append(student)
         saveData()
     }
     
     func changeStudent(index: Int , newValue: StudenItem) {
-        //arrayStudents[index] = newValue
         arrayStudents.insert(newValue, at: index)
+        deleteStudent(index: index + 1)
         saveData()
     }
     
-    func deletStudent(index: Int)  {
+    func deleteStudent(index: Int)  {
         arrayStudents.remove(at: index)
         saveData()
     }
     
-    private func saveData(){
-        guard let archiveData = try? NSKeyedArchiver.archivedData(withRootObject: arrayStudents, requiringSecureCoding: false) else {return}
-        dataBase.set(archiveData, forKey: "arrayStudents")
+    //MARK: - private method
+    private func saveData() {
+        let archiveDataToSave: Data
+        if #available(iOS 11.0, *) {
+            guard let archiveData = try? NSKeyedArchiver.archivedData(withRootObject: arrayStudents, requiringSecureCoding: false) else {return}
+            archiveDataToSave = archiveData
+        } else {
+             let archiveData = NSKeyedArchiver.archivedData(withRootObject: arrayStudents)
+            archiveDataToSave = archiveData
+        }
+        dataBase.set(archiveDataToSave, forKey: "arrayStudents")
     }
-    private func loadData(){
+    
+    private func loadData() {
         guard  let data = dataBase.object(forKey: "arrayStudents")  else {return}
         guard let unarchiveData = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data as! Data) else {return}
         arrayStudents = unarchiveData as! Array<StudenItem>
